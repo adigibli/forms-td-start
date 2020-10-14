@@ -10,9 +10,15 @@ export class AppComponent {
   @ViewChild('f') onlineForm: NgForm;
   defaultSecret = "pet";
   answer = '';
+  genders = ['male', 'female'];
 
   suggestUserName() {
     const suggestedName = 'Superuser';
+    this.onlineForm.form.patchValue({
+      userData: {
+        username: suggestedName
+      }
+    });
   }
 
   // onSubmit(form: NgForm){
